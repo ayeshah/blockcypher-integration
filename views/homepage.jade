@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  section.probootstrap_section
+    .container.row
+
+      h2.col-lg-12 Get Balance
+      form#get-balance-form
+
+        .form-group.col-lg-9
+          label(for="address").h4 BitCoin Testnet Address
+
+          div(style="display:flex;")
+            input(type="text", placeholder="Address", name="address")#address.form-control
+            input(type="submit",value="Go!").btn.btn-info
+
+  section.probootstrap_section
+    .container.row(style="font-size:18px;")
+
+      h3.col-lg-12 Result
+
+      .row
+      div.col-lg-3.col-md-6 Address:
+      div#testnet-address.col-lg-9.col-md-6
+
+      .row
+      div.col-lg-3.col-md-6 Balance (BTC):
+      div#testnet-bal.col-lg-9.col-md-6
