@@ -17,7 +17,7 @@ git clone
 4- Run the project:
    npm start
 
-5- Enter the following link on your browser http://localhost:3000/homepage
+5- To access the application enter the following link on your browser http://localhost:3000/homepage 
 
 
 ### Prerequisites
