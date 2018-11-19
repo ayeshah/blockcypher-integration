@@ -23,9 +23,12 @@ git clone
 ### Prerequisites
 
 1- Git
+
 2- NodeJS
+
 3- Go
-3- BTCEC for signing transactions https://github.com/btcsuite/btcd/tree/master/btcec
+
+3- [BTCEC][https://github.com/btcsuite/btcd/tree/master/btcec] for signing transactions [
 
 
 ## Using the application
