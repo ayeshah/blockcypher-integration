@@ -11,7 +11,7 @@ This application allows users to perform following actions on Bitcoin TestNet:
 1.  Download the application from git using the following cmd:
 git clone
 
-2. cd blockcyper-Integration
+2. cd blockcyper-integration
 
 3.  Install the node dependencies:
   npm install
@@ -61,7 +61,7 @@ Transferring Bitcoins is 3-step process
 
 ## Authors
 
-* **Ayesha Hafeez** - *Initial work* - [ayesha](https://github.com/PurpleBooth)
+* **Ayesha Hafeez** - *Initial work* - [ayesha](https://github.com/ayeshah)
 
 
 ## License
