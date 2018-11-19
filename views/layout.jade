@@ -1,15 +1,56 @@
 doctype html
-html
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		title Blockcypher Integration
+		meta(name='description', content='Free Bootstrap 4 Theme by uicookies.com')
+		meta(name='keywords', content='free website templates, free bootstrap themes, free template, free bootstrap, free website template')
+		link(href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400', rel='stylesheet')
+		link(rel='stylesheet', href='assets/css/bootstrap/bootstrap.css')
+		link(rel='stylesheet', href='assets/css/animate.css')
+		link(rel='stylesheet', href='assets/fonts/ionicons/css/ionicons.min.css')
+		link(rel='stylesheet', href='assets/fonts/fontawesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='assets/css/slick.css')
+		link(rel='stylesheet', href='assets/css/slick-theme.css')
+		link(rel='stylesheet', href='assets/css/helpers.css')
+		link(rel='stylesheet', href='assets/css/style.css')
+	body
+		nav#probootstrap-navbar(style="background-color:black").navbar.navbar-expand-lg.navbar-dark.probootstrap_navbar.probootstrap_scrolled-light
+			.container
+				a.navbar-brand(href='/homepage') Blockcypher Integration
+				button.navbar-toggler(type='button', data-toggle='collapse', data-target='#probootstrap-menu', aria-controls='probootstrap-menu', aria-expanded='false', aria-label='Toggle navigation')
+					span
+						i.ion-navicon
+				#probootstrap-menu.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto
 
-    script(src='/js/lib/jquery.min.js')
-    script(src='/js/lib/bootstrap.min.js')
-    script(src='/js/lib/popper.min.js')
-    script(src='/js/main.js')
+		// END nav
+		block content
+
+		footer.probootstrap_section.probootstrap-border-top
+			.container
+				.row.pt-5
+					.col-md-12.text-center
+						p.probootstrap_font-14
+							| © 2017. All Rights Reserved.
+							br
+							|  Designed & Developed by
+							a(href='https://uicookies.com/', target='_blank') uiCookies
+							small
+								| (Don't remove credit link on this footer. See
+								a(href='https://uicookies.com/license/') license
+								| )
+						p.probootstrap_font-14
+							| Demo Images:
+							a(href='https://unsplash.com/', target='_blank') Unsplash
+		script(src='assets/js/jquery.min.js')
+		script(src='assets/js/popper.min.js')
+		script(src='assets/js/bootstrap.min.js')
+		script(src='assets/js/slick.min.js')
+		script(src='assets/js/jquery.mb.YTPlayer.min.js')
+		script(src='assets/js/jquery.waypoints.min.js')
+		script(src='assets/js/jquery.easing.1.3.js')
+		script(src='assets/js/main.js')
+		script(src='/assets/js/custom/util.js')
+		script(src='/assets/js/custom/wallet.js')

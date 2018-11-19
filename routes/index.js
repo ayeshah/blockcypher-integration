@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('homepage',{ title:'Blockchain Explorer'});
 });
 
 router.get('/homepage',function(req,res,next){

@@ -1,28 +1,73 @@
 extends layout
 
 block content
-  section.probootstrap_section
-    .container.row
+	section.probootstrap_section
+		.container()
+			h4 View Balance
+			form#get-balance-form()
+				.form-group
+					label Bitcoin Address
+					input.form-control(type='text', name='bitcoin-address', placeholder='Enter Bitcoin Address', required='')
+				input#enable-editing-btn.btn.btn-primary.p-3.mr-3.pl-5.pr-5.text-uppercase.d-lg-inline.d-md-inline.d-sm-block.d-block.mb-3(type='button', value='Get Balance',onclick='get_balance()')
+				input#enable-editing-btn.btn.btn-primary.p-3.mr-3.pl-5.pr-5.text-uppercase.d-lg-inline.d-md-inline.d-sm-block.d-block.mb-3(type='button', value='Generate Address', onclick='generate_address()')
 
-      h2.col-lg-12 Get Balance
-      form#get-balance-form
+		.container
 
-        .form-group.col-lg-9
-          label(for="address").h4 BitCoin Testnet Address
+			.row
+				div.col-lg-3.col-md-6 Address:
+				div#testnet-address.col-lg-9.col-md-6
+			.row
+				div.col-lg-3.col-md-6 Balance (satoshi):
+				div#testnet-bal.col-lg-9.col-md-6
 
-          div(style="display:flex;")
-            input(type="text", placeholder="Address", name="address")#address.form-control
-            input(type="submit",value="Go!").btn.btn-info
+		.container(style='margin-top:50px;')
+			h4 Transfer Bitcoin
+			br
+			h5 Step 1 : Enter Address and Amount
 
-  section.probootstrap_section
-    .container.row(style="font-size:18px;")
+			form#create-transaction-form(onsubmit="")
+				.form-group
+					label Recipient Address
+					input.form-control(type='text', name='recipient-bitcoin-address', placeholder='Enter Bitcoin Address', required='')
+				.form-group
+					label Amount (satoshi)
+					input.form-control(type='number', name='amount', placeholder='Enter Amount in satoshis', required='')
 
-      h3.col-lg-12 Result
+				input#create-tx-btn.btn.btn-primary.p-3.mr-3.pl-5.pr-5.d-lg-inline.d-md-inline.d-sm-block.d-block.mb-3(type='button', value='Create Transaction',onclick='create_transaction()')
+		br
+		.container#step-2(hidden)
+				h5 Step 2 : Use Signer to Sign the 'Tosign' hex data with private key
+				.row
+					div.col-lg-3.col-md-6 ToSign:
+					div#tosign-data.col-lg-9.col-md-6
 
-      .row
-      div.col-lg-3.col-md-6 Address:
-      div#testnet-address.col-lg-9.col-md-6
+				br
+				input#signing-complete-btn.btn.btn-primary.p-3.mr-3.pl-5.pr-5.d-lg-inline.d-md-inline.d-sm-block.d-block.mb-3(type='submit', value='Proceed',onclick='tx_signed()')
+		br
+		.container#step-3(hidden)
+				h5 Step 3 : Enter the public key and the signed data
+				form#post-transaction-form()
+					.form-group
+						label Public Key
+						input.form-control(type='text', name='public-key', placeholder='Enter Public Key', required='')
+					.form-group
+						label Signed Data
+						input.form-control(type='text', name='signed-data', placeholder='Enter Output of the signer', required='')
 
-      .row
-      div.col-lg-3.col-md-6 Balance (BTC):
-      div#testnet-bal.col-lg-9.col-md-6
+				br
+				input#signing-complete-btn.btn.btn-primary.p-3.mr-3.pl-5.pr-5.d-lg-inline.d-md-inline.d-sm-block.d-block.mb-3(type='submit', value='Confirm Transaction',onclick='post_transaction()')
+
+
+
+	#confirmationModal.modal.fade(role='dialog', style='overflow-wrap: break-word;')
+		.modal-dialog
+			// Modal content
+			.modal-content
+				.modal-header
+					h4.modal-title Address Detail
+					button.close(type='button', data-dismiss='modal') ×
+				.modal-body
+					p Are you sure you want to delete all data?
+				.modal-footer
+					button.btn.btn-default(type='button', data-dismiss='modal') Confirm
+					button.btn.btn-default(type='button', data-dismiss='modal') Close
