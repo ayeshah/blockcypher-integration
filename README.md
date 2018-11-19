@@ -9,7 +9,7 @@ This application allows users to perform following actions on Bitcoin TestNet:
 ## Getting Started
 
 1.  Download the application from git using the following cmd:
-git clone
+git clone https://github.com/ayeshah/blockcypher-integration.git
 
 2. cd blockcyper-integration
 
